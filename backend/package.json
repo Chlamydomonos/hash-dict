@@ -1,13 +1,8 @@
 {
 	"dependencies": {
-		"@dotenvx/dotenvx": "^1.11.5",
 		"@sequelize/core": "7.0.0-alpha.37",
 		"@sequelize/postgres": "7.0.0-alpha.41",
-		"@sequelize/sqlite3": "7.0.0-alpha.41",
-		"dotenv": "^16.4.5",
-		"express": "^4.19.2",
-		"reflect-metadata": "^0.2.2",
-		"sqlite3": "^5.1.7"
+		"express": "^4.19.2"
 	},
 	"devDependencies": {
 		"@types/express": "^4.17.21",
