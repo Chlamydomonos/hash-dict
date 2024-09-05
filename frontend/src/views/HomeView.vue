@@ -1,7 +1,7 @@
 <template>
     <div class="main-title" ref="mainTitle">
         <div class="main-title-text" ref="mainTitleText">
-            <RouterLink to="/word/latin/hashy">haʃy</RouterLink>
+            <RouterLink to="/word/latin/hashy">haʃø</RouterLink>
             /
             <RouterLink to="/word/ascii/hashy">hashy</RouterLink>
             /

@@ -1,5 +1,5 @@
 <template>
-    <h1 class="header-title"><RouterLink to="/">Haʃy</RouterLink> {{ value ? '|' : '' }} {{ value }}</h1>
+    <h1 class="header-title"><RouterLink to="/">Haʃø</RouterLink> {{ value ? '|' : '' }} {{ value }}</h1>
 </template>
 
 <script lang="ts" setup>

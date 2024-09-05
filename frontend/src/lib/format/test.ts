@@ -1,6 +1,6 @@
 import { Format } from '.';
 
-const isLatin = (word: string) => /ə|ɪ|ɔ|ʃ/.test(word);
+const isLatin = (word: string) => /ə|ɪ|ɔ|ʃ|ø/.test(word);
 
 const isNum = (word: string) => word.includes('\u0305') || (word.length == 1 && /[0-9A-F]/.test(word));
 

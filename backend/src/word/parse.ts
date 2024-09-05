@@ -1,4 +1,4 @@
-const isLatin = (word: string) => /ə|ɪ|ɔ|ʃ/.test(word);
+const isLatin = (word: string) => /ə|ɪ|ɔ|ʃ|ø/.test(word);
 
 const isNum = (word: string) => word.includes('\u0305') || (word.length == 1 && /[0-9A-F]/.test(word));
 
@@ -10,7 +10,7 @@ const isChinese = (word: string) =>
     );
 
 const latinToAscii = (word: string) =>
-    word.replace(/ə/g, 'ee').replace(/ɪ/g, 'i').replace(/ɔ/g, 'oo').replace(/ʃ/g, 'sh');
+    word.replace(/ə/g, 'ee').replace(/ɪ/g, 'i').replace(/ɔ/g, 'oo').replace(/ʃ/g, 'sh').replace(/ø/g, 'y');
 
 const chineseToAscii = (word: string) =>
     word
