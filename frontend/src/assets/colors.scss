@@ -1,0 +1,26 @@
+@mixin main-background {
+    & {
+        background-color: #eee;
+    }
+    .dark & {
+        background-color: #111;
+    }
+}
+
+@mixin frame-background {
+    & {
+        background-color: #fff;
+    }
+    .dark & {
+        background-color: #222;
+    }
+}
+
+@mixin frame-shadow($x, $y, $r) {
+    & {
+        box-shadow: $x $y $r rgba(0, 0, 0, 0.1);
+    }
+    .dark & {
+        box-shadow: $x $y $r rgba(1, 1, 1, 0.1);
+    }
+}

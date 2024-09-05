@@ -1,0 +1,5 @@
+@use './colors.scss';
+body {
+    margin: 0;
+    @include colors.main-background;
+}
