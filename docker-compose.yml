@@ -17,6 +17,7 @@ services:
         networks:
             - app_net
             - db_net
+    restart: always
 
     db:
         expose:
@@ -28,6 +29,7 @@ services:
             - POSTGRES_PASSWORD=123456
         networks:
             - db_net
+        restart: always
 
     nginx:
         image: nginx:latest
@@ -40,6 +42,7 @@ services:
             - backend
         networks:
             - app_net
+        restart: always
 
 networks:
     app_net:
