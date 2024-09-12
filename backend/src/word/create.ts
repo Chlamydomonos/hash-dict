@@ -92,7 +92,9 @@ export const createCategory: (
     // handle reserved end
 
     const hasPrefix = await Category.findOne({
-        where: sql`${toDBFormat(value)} like concat(value, '%') and typeId = ${typeId} and parentId = ${parentId}`,
+        where: sql`${toDBFormat(
+            value
+        )} like concat(value, '%') and Category.typeId = ${typeId} and Category.parentId = ${parentId}`,
     });
     if (hasPrefix) {
         return { success: false, reason: 'prefix', prefixId: hasPrefix.id, prefix: toNormalFormat(hasPrefix.value) };
