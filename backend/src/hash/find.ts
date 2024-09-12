@@ -82,7 +82,7 @@ const findNormal = async (category: string, typeId: number, parentId: number | n
     for (let i = 0; i < 20; i++) {
         const built = toDBFormat(toCategory(hash));
         const hasPrefix = await Category.findOne({
-            where: sql`${built} like concat(value, '%') and "Category"."typeId" = ${typeId} and "Category"."parentId“ = ${parentId}`,
+            where: sql`${built} like concat(value, '%') and "Category"."typeId" = ${typeId} and "Category"."parentId" = ${parentId}`,
         });
         if (hasPrefix) {
             const parsedPrefix = parseWord(hasPrefix.value);
