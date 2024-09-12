@@ -1,16 +1,21 @@
 {
-	"dependencies": {
-		"@sequelize/core": "7.0.0-alpha.37",
-		"@sequelize/postgres": "7.0.0-alpha.41",
-		"express": "^4.19.2"
-	},
-	"devDependencies": {
-		"@types/express": "^4.17.21",
-		"@types/node": "^22.5.1",
-		"typescript": "^5.5.4"
-	},
-	"scripts": {
-		"build": "tsc --build",
-		"start": "dotenvx run -- node ./dist/main.js"
-	}
+    "dependencies": {
+        "@dotenvx/dotenvx": "^1.11.5",
+        "@sequelize/core": "7.0.0-alpha.37",
+        "@sequelize/postgres": "7.0.0-alpha.41",
+        "@sequelize/sqlite3": "7.0.0-alpha.41",
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "reflect-metadata": "^0.2.2",
+        "sqlite3": "^5.1.7"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.21",
+        "@types/node": "^22.5.1",
+        "typescript": "^5.5.4"
+    },
+    "scripts": {
+        "build": "tsc --build",
+        "start": "dotenvx run -- node ./dist/main.js"
+    }
 }

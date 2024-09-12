@@ -7,7 +7,7 @@ import { deleteCategory, deleteType } from './word/delete';
 import { findHash } from './hash/find';
 import { db } from './db';
 import { commitUsers, getInvalidUsers, register, rejectUsers } from './user/register';
-import { countWithParent, countWithType, listWithParent, listWithType } from './word/list';
+import { countWithParent, countWithType, listTypes, listWithParent, listWithType } from './word/list';
 
 const app = express();
 
@@ -218,6 +218,10 @@ app.get('/get-words-with-parent/:id/:pageSize/:page', async (req, res) => {
         return;
     }
     res.send({ success: true, words: await listWithParent(id, page, pageSize) });
+});
+
+app.get('/types', async (_req, res) => {
+    res.send(await listTypes());
 });
 
 const main = async () => {

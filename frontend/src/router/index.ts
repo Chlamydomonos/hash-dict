@@ -15,6 +15,7 @@ import { handleType } from './handle-type';
 import { handleCreateCategory } from './handle-create-category';
 import AdminView from '@/views/AdminView.vue';
 import { handleAdmin } from './handle-admin';
+import TypesView from '@/views/TypesView.vue';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -129,6 +130,17 @@ const router = createRouter({
                 title: { value: '注册请求' },
             },
             beforeEnter: handleAdmin,
+        },
+        {
+            path: '/types',
+            name: 'types',
+            components: {
+                default: TypesView,
+                title: HeaderTitle,
+            },
+            props: {
+                title: { value: '类型列表' },
+            },
         },
     ],
 });

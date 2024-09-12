@@ -1,4 +1,5 @@
 import { Category } from '../db/models/Category';
+import { Type } from '../db/models/Type';
 import { toNormalFormat } from '../db/translate';
 
 export const countWithType = (id: number) => Category.count({ where: { typeId: id, parentId: null } });
@@ -23,4 +24,11 @@ export const listWithParent = async (id: number, page: number, pageSize: number)
         offset: page * pageSize,
     });
     return query.map((category) => ({ id: category.id as number, value: toNormalFormat(category.value) }));
+};
+
+export const listTypes = async () => {
+    return (await Type.findAll()).map((value) => ({
+        id: value.id as number,
+        value: value.end,
+    }));
 };
