@@ -18,11 +18,11 @@ export const deleteCategory = async (id: number) => {
         return;
     }
     await db.query(sql`
-        with recursive categoryTree as (
-            select id from Categories where id = ${id}
+        with recursive "categoryTree" as (
+            select "id" from "Categories" where "id" = ${id}
             union all
-            select c.id from Categories c join categoryTree ct on c.parentId = ct.id
+            select "c"."id" from "Categories" "c" join "categoryTree" "ct" on "c"."parentId" = "ct"."id"
         )
-        delete from Categories where id in (select id from categoryTree)
+        delete from "Categories" where "id" in (select "id" from "categoryTree")
     `);
 };
