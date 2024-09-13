@@ -61,6 +61,7 @@
                 <el-button v-if="sessionStore.loggedIn">创建</el-button>
             </div>
             <ChildrenTable
+                v-if="state == State.OK"
                 :id="categories[categories.length - 1].id"
                 :format="currentFormat"
                 :base-route="childBaseRoute"
