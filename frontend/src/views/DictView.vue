@@ -97,7 +97,16 @@ const typeStr = computed(() => {
         return toFormat(props.type.value, props.format);
     }
 });
-const categoryStr = (id: number) => toFormat(props.categories[id].value, props.format);
+const categoryStr = (id: number) => {
+    let word = props.categories[id].value;
+    if (id == 0) {
+        const startWithConsonant = /^(?:b|p|m|f|d|t|n|l|z|c|s|g|k|h|sh|r)(.+)$/.exec(word);
+        if (startWithConsonant) {
+            word = startWithConsonant[1];
+        }
+    }
+    return toFormat(word, props.format);
+};
 
 enum State {
     LOADING,

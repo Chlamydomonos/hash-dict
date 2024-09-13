@@ -4,7 +4,7 @@ export type Unit = { id: number; value: string };
 
 export const buildWord = (type: Unit, categories: Unit[], format: Format) => {
     let word = categories[0].value;
-    let startWithConsonant = /^(?:b|p|m|f|d|t|n|l|z|c|s|g|k|h|sh|r)(.+)$/.exec(word);
+    const startWithConsonant = /^(?:b|p|m|f|d|t|n|l|z|c|s|g|k|h|sh|r)(.+)$/.exec(word);
     if (startWithConsonant) {
         word = startWithConsonant[1];
     }
