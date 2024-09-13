@@ -126,7 +126,14 @@ const gotoPage = async (page: number) => {
 const buildChildRoute = (child: Unit) =>
     `/dict/${formatName(props.format)}/${props.baseRoute}/${child.id}-${child.value}`;
 
-const buildChild = (child: Unit) => toFormat(`${props.baseWord}${child.value}${props.type}`, props.format);
+const buildChild = (child: Unit) => {
+    let word = `${props.baseWord}${child.value}${props.type}`;
+    const startWithConsonant = /^(?:b|p|m|f|d|t|n|l|z|c|s|g|k|h|sh|r)(.+)$/.exec(word);
+    if (startWithConsonant) {
+        word = startWithConsonant[1];
+    }
+    return toFormat(`${props.baseWord}${child.value}${props.type}`, props.format);
+};
 
 const router = useRouter();
 const sessionStore = useSessionStore();
