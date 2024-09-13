@@ -99,11 +99,8 @@ const typeStr = computed(() => {
 });
 const categoryStr = (id: number) => {
     let word = props.categories[id].value;
-    if (id == 0) {
-        const startWithConsonant = /^(?:b|p|m|f|d|t|n|l|z|c|s|g|k|h|sh|r)(.+)$/.exec(word);
-        if (startWithConsonant) {
-            word = startWithConsonant[1];
-        }
+    if (id == 0 && word.startsWith('b')) {
+        word = word.slice(1);
     }
     return toFormat(word, props.format);
 };

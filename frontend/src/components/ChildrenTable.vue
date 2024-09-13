@@ -128,9 +128,8 @@ const buildChildRoute = (child: Unit) =>
 
 const buildChild = (child: Unit) => {
     let word = `${props.baseWord}${child.value}${props.type}`;
-    const startWithConsonant = /^(?:b|p|m|f|d|t|n|l|z|c|s|g|k|h|sh|r)(.+)$/.exec(word);
-    if (startWithConsonant) {
-        word = startWithConsonant[1];
+    if (word.startsWith('b')) {
+        word = word.slice(1);
     }
     return toFormat(word, props.format);
 };
