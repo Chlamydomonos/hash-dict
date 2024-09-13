@@ -56,7 +56,7 @@ export const queryWord: (word: string) => Promise<QueryWordResponse> = async (wo
 
     const categories: Unit[] = [];
     let tempUnit = '';
-    let tempCategory: Category | null = null as Category | null;
+    let tempCategory = null as Category | null;
     for (let i = 0; i < parsed.units.length; i++) {
         const parsedUnit = parsed.units[i];
         tempUnit += parsedUnit;
@@ -82,8 +82,10 @@ export const queryWord: (word: string) => Promise<QueryWordResponse> = async (wo
         }
         //handle reserved end
 
-        const tryQuery: Category | null = await Category.findOne({
-            where: { typeId: typeQuery.id, parentId: tempCategory?.id ?? null, value: toDBFormat(tempUnit) },
+        const parentId = tempCategory?.id ?? null;
+
+        const tryQuery = await Category.findOne({
+            where: { typeId: type.id, parentId, value: toDBFormat(tempUnit) },
         });
         if (tryQuery != null) {
             categories.push({ id: tryQuery.id, value: toNormalFormat(tryQuery.value) });
