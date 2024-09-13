@@ -132,7 +132,7 @@ const buildChild = (child: Unit) => {
     if (startWithConsonant) {
         word = startWithConsonant[1];
     }
-    return toFormat(`${props.baseWord}${child.value}${props.type}`, props.format);
+    return toFormat(word, props.format);
 };
 
 const router = useRouter();
