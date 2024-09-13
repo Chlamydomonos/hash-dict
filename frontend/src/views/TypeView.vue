@@ -42,6 +42,7 @@
                 <el-button v-if="sessionStore.loggedIn" @click="gotoCreate">创建</el-button>
             </div>
             <ChildrenTable
+                v-if="state == State.OK"
                 :id="type.id"
                 is-type
                 :format="currentFormat"
