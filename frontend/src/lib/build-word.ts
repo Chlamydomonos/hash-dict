@@ -7,6 +7,7 @@ export const buildWord = (type: Unit, categories: Unit[], format: Format) => {
     if (word.startsWith('b')) {
         word = word.slice(1);
     }
+    word = toFormat(word, format);
 
     for (let i = 1; i < categories.length; i++) {
         word += toFormat(categories[i].value, format);
