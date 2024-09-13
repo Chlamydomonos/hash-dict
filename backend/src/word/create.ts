@@ -54,7 +54,7 @@ export const createCategory: (
     let word: ParsedWord;
     try {
         word = parseWord(`${value}${type.end}`);
-        value = word.units.join();
+        value = word.units.join('');
     } catch (e) {
         return { success: false, reason: 'format_error' };
     }
