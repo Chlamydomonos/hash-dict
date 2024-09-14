@@ -11,8 +11,8 @@
             /
             <RouterLink to="/word/chinese/hashy">哈希</RouterLink>
         </div>
-        <div class="button-container" v-if="sessionStore.loggedIn">
-            <el-button type="primary" size="large" @click="gotoTypes">类型列表</el-button>
+        <div class="button-container">
+            <el-button type="primary" size="large" @click="gotoTypes" v-if="sessionStore.loggedIn">类型列表</el-button>
             <el-button type="primary" size="large" @click="gotoCreateType">创建类型</el-button>
         </div>
     </div>
